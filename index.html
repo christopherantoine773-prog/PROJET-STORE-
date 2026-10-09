@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Dope Pain • Official</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome pour les icônes des réseaux -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,#0b0b0b,#1a1a1a);
+  display:flex;
+  justify-content:center;
+  color:#fff;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  padding:60px 16px 40px;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.header h1{
+  font-size:28px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.badge{
+  width:24px;
+  height:24px;
+  display:inline-block;
+  background: url('verified-badge.png') no-repeat center/contain; /* mettre ton badge local ici */
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:.6}
+  50%{opacity:1}
+  100%{opacity:.6}
+}
+
+/* CARTES */
+.card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#222;
+  border:1px solid #2e2e2e;
+  padding:16px;
+  margin-bottom:14px;
+  border-radius:16px;
+  text-decoration:none;
+  color:#fff;
+  transition:all 0.3s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+}
+
+.icon{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+/* COULEURS DES RÉSEAUX */
+.tiktok{background:#000}       .tiktok i{color:#FF0050}
+.telegram{background:#0f2a3d}  .telegram i{color:#2CA5E0}
+.youtube{background:#2b0f0f}    .youtube i{color:#FF0000}
+.snapchat{background:#332f00}   .snapchat i{color:#FFFC00}
+.capcut{background:#003333}     .capcut i{color:#00FFF0}
+
+.info span{
+  font-size:16px;
+  font-weight:600;
+}
+.info small{
+  display:block;
+  font-size:13px;
+  opacity:.75;
+}
+
+button{
+  margin-top:26px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:24px;
+  background:#1DA1F2;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+button:hover{
+  background:#0d8ddb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Dope Pain <span class="badge"></span></h1>
+  </div>
+
+  <a class="card tiktok" href="https://www.tiktok.com/@dope__pain" target="_blank">
+    <div class="icon"><i class="fab fa-tiktok"></i></div>
+    <div class="info">
+      <span>TikTok</span>
+      <small>12 803 abonnés</small>
+    </div>
+  </a>
+
+  <a class="card telegram" href="https://t.me/Nagatopain444" target="_blank">
+    <div class="icon"><i class="fab fa-telegram"></i></div>
+    <div class="info">
+      <span>Telegram</span>
+      <small>3 402 abonnés</small>
+    </div>
+  </a>
+
+  <a class="card youtube" href="https://youtube.com/@irus_editor" target="_blank">
+    <div class="icon"><i class="fab fa-youtube"></i></div>
+    <div class="info">
+      <span>YouTube</span>
+      <small>Voir la chaîne</small>
+    </div>
+  </a>
+
+  <a class="card snapchat" href="https://www.snapchat.com/add/dope-pain999" target="_blank">
+    <div class="icon"><i class="fab fa-snapchat"></i></div>
+    <div class="info">
+      <span>Snapchat</span>
+      <small>5 104 abonnés</small>
+    </div>
+  </a>
+
+  <a class="card capcut" href="https://mobile.capcutshare.com/sv2/ZS5DrY98S/" target="_blank">
+    <div class="icon"><i class="fas fa-video"></i></div>
+    <div class="info">
+      <span>CapCut</span>
+      <small>2 205 abonnés</small>
+    </div>
+  </a>
+
+  <button id="soundBtn">▶ Activer Phonk Brazil</button>
+  <audio id="phonkAudio" loop>
+    <source src="phonk-brazil.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
+</div>
+
+<script>
+const btn = document.getElementById('soundBtn');
+const audio = document.getElementById('phonkAudio');
+let isPlaying = false;
+
+btn.addEventListener('click', () => {
+  if(!isPlaying){
+    audio.play().catch(e => alert("Cliquez sur le bouton pour activer le son"));
+    btn.textContent = '⏸ Couper le son';
+  }else{
+    audio.pause();
+    btn.textContent = '▶ Activer Phonk Brazil';
+  }
+  isPlaying = !isPlaying;
+});
+</script>
+
+</body>
+</html>
